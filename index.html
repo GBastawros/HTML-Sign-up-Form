@@ -15,10 +15,19 @@
         <form method="GET" action="results.html"> <!-- TODO: Set Action and Method Properties -->
             <div>
                 <label for="firstname">Your First Name</label>
-                <input type="text" id="firstname" name="firstname">
+                <span class="required-field">*</span>
+                <input type="text" id="firstname" name="firstname" required minlength="2" maxlength="35">
                 <!-- TODO: Create a "lastname" input with type "text" -->
                 <label for="lastname">Your Last Name</label>
-                <input type="text" id="lastname" name="lastname">
+                <span class="required-field">*</span>
+                <input type="text" id="lastname" name="lastname" required minlength="2" maxlength="35">
+                <label for="age">Your Age</label>
+                <input type="number" id="age" name="age" min="21" max="120">
+                <h5>you must be at least 21 years old</h5>
+                <label for="password">Your Secret Code (must be 6 alphanumeric characters)</label>
+                <span class="required-field">*</span>
+                <input type="password" id="password" name="password" 
+                    pattern="[0-9a-zA-Z]{6}" title="6-Character Alphanumeric Pass Code" required>
             </div>
             <!-- TODO: Make fieldset and legend -->
             <!-- Todo: Email Input -->
@@ -27,7 +36,8 @@
             <fieldset>
                 <legend>Your Contact Info</legend>
                 <label for="email">Your Email</label>
-                <input type="email" id="email" value="enter your email address">
+                <span class="required-field">*</span>
+                <input type="email" id="email" value="enter your email address" required>
                 <label for="adress">Your Street Address</label>
                 <input type="text" id="address" value="enter your street address">
                 <label for="city">Your City</label>
@@ -85,9 +95,9 @@
                     <option value="WV">West Virginia</option>
                     <option value="WY">Wyoming</option>
                 </select>
-                
-                <label for="zipcode">Your Zipecode</label>
-                <input type="number" id="zipcode" placeholder="00000" max="5">
+                </datalist>           
+                <label for="zip">Your Zipecode</label>
+                <input type="number" id="zip" name="zip" placeholder="55555" pattern="[0-9]{5}">
             </fieldset>
             <!-- TODO: Second fieldset -->
             <!-- TODO: Radio buttons for selecting preferred destination -->
